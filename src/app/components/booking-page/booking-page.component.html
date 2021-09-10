@@ -1,0 +1,230 @@
+<div>
+  <header>
+    <div class="header-color">
+      <!-- search by city  -->
+      <div id="search">
+        <input
+          type="search"
+          id="searchbar"
+          placeholder="  Search by City"
+          [(ngModel)]="userSearch"
+          (input)="searchByCity()"
+        />
+        <input type="button" value="Search" id="searchButton" />
+      </div>
+
+      <div class="second-row">
+        <!-- check in  -->
+        <div class="outer-div">
+          <input
+            type="text"
+            id="check-in"
+            placeholder="Check-in"
+            onfocus="(this.type='date')"
+          />
+        </div>
+
+        <!-- check out -->
+        <div class="outer-div">
+          <input
+            type="text"
+            id="check-out"
+            placeholder="Check-out"
+            onfocus="(this.type='date')"
+          />
+        </div>
+
+        <!-- room type -->
+        <div class="outer-div">
+          <select id="room-type">
+            <option value="">
+              <span class="select-roomType">Room Type</span>
+            </option>
+            <option *ngFor="let type of roomTypes">
+              <span class="select-roomType">{{ type }}</span>
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="third-row">
+        <!-- price -->
+        <div class="first-group">
+          <div class="price-group">
+            <span id="price-tag">Price</span>
+            <span class="max-value">max ${{ input.value }}</span>
+          </div>
+          <input
+            class="price-range"
+            #input
+            type="range"
+            [(ngModel)]="inputValue"
+            [min]="price.min"
+            [max]="price.max"
+            [step]="price.step"
+            (change)="filterPrice()"
+          />
+        </div>
+
+        <div class="vertical-line"></div>
+
+        <div class="second-group">
+          <!-- property type -->
+          <div class="property-type">
+            <div class="label-div"><label for="type">Property-type</label></div>
+            <div class="select-menu">
+              <select
+                id="type"
+                name="type"
+                [(ngModel)]="propertyType"
+                (click)="filter()"
+              >
+                <option>All</option>
+                <option *ngFor="let star of ratingStars">{{ star }}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="vertical-line"></div>
+
+          <!-- guest Rating -->
+          <div class="guest-rating">
+            <div class="label-div">
+              <label for="rating">Guest-rating</label>
+            </div>
+            <div class="select-menu">
+              <select
+                id="rating"
+                name="rating"
+                [(ngModel)]="guestRatings"
+                (click)="filter()"
+              >
+                <option value="">All</option>
+                <option *ngFor="let gr of guestRating">{{ gr }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="vertical-line"></div>
+
+        <div class="third-group">
+          <!-- hotel location -->
+          <div class="third-label-div">
+            <label for="hotels">Hotel location</label>
+          </div>
+          <div class="third-select-menu">
+            <select
+              class="hotel-location"
+              [(ngModel)]="location"
+              (click)="filter()"
+            >
+              <option value="">All</option>
+              <option *ngFor="let city of hotelLocation">
+                {{ city }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <div class="map-row">
+      <!-- map -->
+      <div class="map">
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe
+              width="335"
+              height="60"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=paris&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe
+            ><a href="https://fmovies-online.net"></a><br /><style>
+              .mapouter {
+                position: relative;
+                text-align: right;
+                height: 92px;
+                width: 335px;
+              }</style
+            ><a *ngFor="let hotel of filteredHotels" href="{{ hotel.mapurl }}"
+              >embedgooglemap.net</a
+            ><style>
+              /* https://www.embedgooglemap.net */
+              .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 92px;
+                width: 335px;
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amentities -->
+      <div class="filter-div">
+        <div id="sortby">Sort By</div>
+        <div>
+          <select
+          class="filters"
+          [(ngModel)]="amentity"
+          (click)="filterAmentities()">
+          <option>Amentities</option>
+          <option *ngFor="let option of amentities">{{ option }}</option>
+        </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- hotel results -->
+
+    <div class="hotel-results">
+      <div class="hotel" *ngFor="let hotel of filteredHotels">
+        <!-- img -->
+        <div id="hotel-img"><img src="{{ hotel.thumbnail }}" /></div>
+
+        <!-- description -->
+        <div id="hotel-desc">
+          <div class="hotel-name">{{ hotel.hotelName }}</div>
+          <div class="rating-stars">
+            <div *ngIf="hotel.rating === 4">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div *ngIf="hotel.rating === 5">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div>Hotel</div>
+          </div>
+          <div class="hotel-city">{{ hotel.city }}</div>
+          <div class="guest-rating">
+            <div class="rating-no">
+              {{ hotel.ratings.no | number: "1.1-1" }}
+            </div>
+            <div class="rating-text">{{ hotel.ratings.text }}</div>
+          </div>
+        </div>
+
+        <!-- price -->
+        <div class="hotel-price">
+          <div class="price-text">Hotel Website</div>
+          <div class="price-num">${{ hotel.price }}</div>
+          <button>View Deal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,330 @@
+header {
+  width: 80%;
+  margin: auto;
+  margin-top: 0px;
+}
+
+header .header-color {
+  background-color: rgb(50, 59, 63);
+  border: 1px solid rgb(50, 59, 63);
+}
+
+header #search {
+  width: 99%;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+header #searchbar {
+  width: 89.5%;
+  height: 40px;
+  border: none;
+  float: left;
+}
+
+header #searchButton {
+  width: 10%;
+  float: left;
+  height: 40px;
+  background-color: rgba(28, 113, 170, 0.685);
+  color: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  border: 0.5px solid rgba(28, 113, 170, 0.685);
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+header #searchButton:hover {
+  cursor: pointer;
+}
+
+header .second-row {
+  width: 100%;
+  margin: auto;
+  margin-top: 8px;
+  display: inline-flex;
+}
+
+header .outer-div {
+  width: 100%;
+}
+
+header .second-row #check-in {
+  height: 41px;
+  width: 96%;
+  margin-left: 8px;
+  border-style: none;
+  border-left: 8px solid rgba(28, 113, 170, 0.685);
+  border-radius: 2px;
+}
+
+header .second-row #check-out {
+  height: 41px;
+  width: 96%;
+  margin-left: 8px;
+  border-style: none;
+  border-left: 8px solid #ff8800;
+  border-radius: 2px;
+}
+
+header .second-row #check-in,
+#check-out:hover {
+  cursor: pointer;
+}
+
+header .second-row #room-type {
+  height: 42.5px;
+  width: 96%;
+  margin-top: -1px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+header .second-row .outer-div .select-roomType {
+  border: 1px dotted black;
+}
+
+header .third-row {
+  width: 100%;
+  display: flex;
+}
+
+header .third-row .first-group {
+  width: 100%;
+  margin-left: 8px;
+  margin-top: 10px;
+  color: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+header .third-row .first-group .price-group #price-tag {
+  margin-left: 2px;
+}
+
+header .third-row .first-group .price-group .max-value {
+  float: right;
+  margin-right: 18px;
+}
+
+header .third-row .first-group .price-range {
+  width: 95%;
+  margin-right: 15px;
+  margin-top: 8px;
+}
+
+header .vertical-line {
+  /* vertical line  */
+  border-style: none;
+  border-left: 0.1px groove lightgray;
+  height: 50px;
+  margin-top: 10px;
+}
+
+header .third-row .second-group {
+  width: 100%;
+  display: flex;
+}
+
+header .third-row .second-group .property-type {
+  width: 100%;
+  margin-left: 50px;
+  margin-top: 8px;
+}
+
+.label-div {
+  margin-bottom: 7px;
+}
+
+.select-menu {
+  margin-right: 15px;
+}
+
+header .third-row .second-group .guest-rating {
+  width: 100%;
+  margin-top: 8px;
+  margin-left: 40px;
+}
+
+header .third-row label {
+  color: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+header .third-row select {
+  width: 100%;
+  border: none;
+  background-color: inherit;
+  color: whitesmoke;
+  font-size: 12px;
+}
+
+header .third-row select option {
+  background-color: rgb(50, 59, 63);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  width: 100%;
+}
+
+
+header .third-row .third-group {
+  width: 100%;
+}
+
+header .third-row .third-group .third-label-div {
+  margin-left: 40px;
+  margin-top: 8px;
+}
+
+header .third-row .third-group .third-select-menu {
+  margin-right: 200px;
+  margin-left: 40px;
+  margin-top: 7px;
+}
+
+// HOTELS 
+
+.main-content {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 0px;
+  background-color: #ebeced;
+  height: 1000px;
+}
+
+.map-row {
+  width: 100%;
+  height: 60px;
+}
+
+
+.main-content .filter-div #sortby {
+  float: left;
+  margin-left: 900px;
+  margin-top: -55px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+}
+
+.main-content .filter-div select{
+  float: right;
+  margin-top: -65px;
+  margin-right: 40px;
+  width: 350px;
+  height: 40px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.main-content .hotel-results {
+  margin-top: 20px;
+}
+
+.main-content .hotel {
+  width: 98%;
+  height: 270px;
+  margin: auto;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 8px 8px 15px rgb(236, 234, 234);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.main-content img {
+  width: 350px;
+  height: 269px;
+}
+
+#hotel-desc {
+  float: left;
+  width: 50%;
+  height: 200px;
+  border-right: 0.1px groove rgba(228, 224, 224, 0.397);
+  margin-left: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hotel-name {
+  font-size: x-large;
+  font-weight: bold;
+  color: rgb(71, 71, 71);
+  margin-top: -25px;
+}
+
+.rating-stars {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 5px;
+  font-size: medium;
+}
+
+.fa-star {
+  color: rgb(255, 212, 20);
+  padding-right: 10px;
+}
+
+.hotel-city {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.guest-rating {
+  display: inline-flex;
+}
+
+.guest-rating .rating-no {
+  margin-right: 10px;
+  background-color: #3a833d;
+  color: white;
+  text-align: center;
+  border-radius: 3px;
+  padding: 6px;
+}
+
+.guest-rating .rating-text {
+  padding: 4px;
+}
+
+.hotel-price {
+  float: left;
+  width: 30%;
+  height: 270px;
+  text-align: center;
+}
+
+.hotel-price .price-text {
+  margin-top: 90px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  color: #4CAF50;
+}
+
+.hotel-price .price-num {
+  color: #4CAF50;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  margin-bottom: -60px;
+  margin-top: 10px;
+}
+
+.hotel-price button:hover {
+  cursor: pointer;
+}
+
+.hotel-price button {
+  margin-top: 120px;
+  padding: 14px 95px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
